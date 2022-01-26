@@ -1,4 +1,4 @@
-package com.iu.s1.employees;
+package com.iu.s1.employee;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -47,14 +47,14 @@ public EmployeeDTO getOne(EmployeeDTO dep) throws Exception {
 			employeeDTO.setEmployee_id(rs.getInt("employee_id"));
 			employeeDTO.setFirst_name(rs.getString("first_name"));
 			employeeDTO.setLast_name(rs.getString("last_name"));
-			employeeDTO.setEmail(rs.getString("Emial"));
-			employeeDTO.setPhone_number(rs.getString("Emial"));
-			employeeDTO.setHire_date(rs.getString("Emial"));
-			employeeDTO.setJob_id(rs.getString("Emial"));
+			employeeDTO.setEmail(rs.getString("email"));
+			employeeDTO.setPhone_number(rs.getString("phone_number"));
+			employeeDTO.setHire_date(rs.getString("hire_date"));
+			employeeDTO.setJob_id(rs.getString("job_id"));
 			employeeDTO.setSalary(rs.getInt("salary"));
-			employeeDTO.setCommission_pct(rs.getDouble("Commission_pct"));
-			employeeDTO.setManager_id(rs.getInt("Manager_id"));
-			employeeDTO.setDepartment_id(rs.getInt("Department_id"));
+			employeeDTO.setCommission_pct(rs.getDouble("commission_pct"));
+			employeeDTO.setManager_id(rs.getInt("manager_id"));
+			employeeDTO.setDepartment_id(rs.getInt("department_id"));
 			
 		}
 			
@@ -76,7 +76,7 @@ public EmployeeDTO getOne(EmployeeDTO dep) throws Exception {
 
 		//2. SQL Query 문 작성
 		//   JAVA에서는 끝에 ; 제외
-		String sql = "SELECT * FROM DEPARTMENTS";
+		String sql = "SELECT * FROM Employees";
 		
 		//3. 작성한 SQL Query 미리 전송
 		 PreparedStatement st = con.prepareStatement(sql);
@@ -91,17 +91,18 @@ public EmployeeDTO getOne(EmployeeDTO dep) throws Exception {
 			
 			 
 			EmployeeDTO employeeDTO = new EmployeeDTO();
-				employeeDTO.setEmployee_id(rs.getInt("employee_id"));
-				employeeDTO.setFirst_name(rs.getString("first_name"));
-				employeeDTO.setLast_name(rs.getString("last_name"));
-				employeeDTO.setEmail(rs.getString("Emial"));
-				employeeDTO.setPhone_number(rs.getString("Emial"));
-				employeeDTO.setHire_date(rs.getString("Emial"));
-				employeeDTO.setJob_id(rs.getString("Emial"));
-				employeeDTO.setSalary(rs.getInt("salary"));
-				employeeDTO.setCommission_pct(rs.getDouble("Commission_pct"));
-				employeeDTO.setManager_id(rs.getInt("Manager_id"));
-				employeeDTO.setDepartment_id(rs.getInt("Department_id"));
+			employeeDTO = new EmployeeDTO();
+			employeeDTO.setEmployee_id(rs.getInt("employee_id"));
+			employeeDTO.setFirst_name(rs.getString("first_name"));
+			employeeDTO.setLast_name(rs.getString("last_name"));
+			employeeDTO.setEmail(rs.getString("Email"));
+			employeeDTO.setPhone_number(rs.getString("Phone_number"));
+			employeeDTO.setHire_date(rs.getString("Hire_date"));
+			employeeDTO.setJob_id(rs.getString("Job_id"));
+			employeeDTO.setSalary(rs.getInt("salary"));
+			employeeDTO.setCommission_pct(rs.getDouble("Commission_pct"));
+			employeeDTO.setManager_id(rs.getInt("Manager_id"));
+			employeeDTO.setDepartment_id(rs.getInt("Department_id"));
 			 
 			//arrayList
 			ar.add(employeeDTO);

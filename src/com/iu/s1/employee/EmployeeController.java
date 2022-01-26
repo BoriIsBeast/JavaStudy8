@@ -1,4 +1,4 @@
-package com.iu.s1.employees;
+package com.iu.s1.employee;
 
 import java.util.List;
 import java.util.Scanner;

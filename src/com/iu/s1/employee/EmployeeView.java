@@ -1,4 +1,4 @@
-package com.iu.s1.employees;
+package com.iu.s1.employee;
 
 import java.util.List;
 
@@ -14,6 +14,7 @@ public class EmployeeView {
 		System.out.println(employeeDTO.getHire_date()+"\t");
 		System.out.println(employeeDTO.getJob_id()+"\t");
 		System.out.println(employeeDTO.getSalary()+"\t");
+		System.out.println(employeeDTO.getCommission_pct()+"\t");
 		System.out.println(employeeDTO.getManager_id()+"\t");
 		System.out.println(employeeDTO.getDepartment_id()+"\t");
 		System.out.println("----------------------------------------------------");

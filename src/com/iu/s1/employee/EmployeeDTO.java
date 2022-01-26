@@ -1,8 +1,8 @@
-package com.iu.s1.employees;
+package com.iu.s1.employee;
 
 public class EmployeeDTO {
-
-	private int employee_id;
+	
+	private Integer employee_id;
 	private String first_name;
 	private String last_name;
 	private String email;
@@ -10,13 +10,13 @@ public class EmployeeDTO {
 	private String hire_date;
 	private String job_id;
 	private Integer salary;
+	private Double commission_pct;
+	private Integer manager_id;
 	
-	
-	
-	public int getEmployee_id() {
+	public Integer getEmployee_id() {
 		return employee_id;
 	}
-	public void setEmployee_id(int employee_id) {
+	public void setEmployee_id(Integer employee_id) {
 		this.employee_id = employee_id;
 	}
 	public String getFirst_name() {
@@ -61,10 +61,10 @@ public class EmployeeDTO {
 	public void setSalary(Integer salary) {
 		this.salary = salary;
 	}
-	public double getCommission_pct() {
+	public Double getCommission_pct() {
 		return commission_pct;
 	}
-	public void setCommission_pct(double commission_pct) {
+	public void setCommission_pct(Double commission_pct) {
 		this.commission_pct = commission_pct;
 	}
 	public Integer getManager_id() {
@@ -79,8 +79,6 @@ public class EmployeeDTO {
 	public void setDepartment_id(Integer department_id) {
 		this.department_id = department_id;
 	}
-	private double commission_pct;
-	private Integer manager_id;
 	private Integer department_id;
-	
+
 }

@@ -19,7 +19,7 @@ public class LocationDAO {
 	}
 	//부서번호로 조회
 	
-	public LocationDTO getOne(LocationDTO dep) throws Exception {
+	public LocationDTO getOne(LocationDTO loc) throws Exception {
 
 		LocationDTO locationDTO = null;
 		
@@ -32,7 +32,7 @@ public class LocationDAO {
 		//3. 미리 전송
 		PreparedStatement st = con.prepareStatement(sql);
 		//4. ? 세팅  // 패스!
-		st.setInt(1, dep.getLocation_id());
+		st.setInt(1, loc.getLocation_id());
 		
 		//5. 최종 전송 후 결과 처리
 		ResultSet rs = st.executeQuery();

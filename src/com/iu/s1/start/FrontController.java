@@ -2,22 +2,32 @@ package com.iu.s1.start;
 
 import java.util.Scanner;
 
+import com.iu.s1.Region.RegionController;
 import com.iu.s1.department.DepartmentController;
-import com.iu.s1.employees.EmployeeController;
+import com.iu.s1.employee.EmployeeController;
+import com.iu.s1.location.LocationController;
 
-public class FrontController {//모든 컨트롤러 연결
-
-	private Scanner sc;
-	private DepartmentController departmentController;
-	private LocationController locationController;
-	private EmployeeController employeeController;
+public class FrontController {
 	
+	private Scanner sc;
+	private DepartmentController departMentController;
+	// LocationController
+	private LocationController locationController;
+	// EmployeeController
+	private EmployeeController employeeController;
+	//RegionController
+	private RegionController regionController;
 	public FrontController() {
-		sc = new Scanner(System.in);
-		departmentController = new DepartmentController();
-		locationController 
-		//Employee Controller
+		sc= new Scanner(System.in);
+		departMentController = new DepartmentController();
+		// LocationController
+		locationController = new LocationController();
+		// EmployeeController
+		employeeController = new EmployeeController();
+		//RegionController
+		regionController = new RegionController();
 	}
+	
 	
 	public void mainStart() throws Exception {
 		boolean flag = true;
@@ -26,29 +36,33 @@ public class FrontController {//모든 컨트롤러 연결
 			System.out.println("1. 직 원  관 리");
 			System.out.println("2. 부 서  관 리");
 			System.out.println("3. 지 역  관 리");
+			System.out.println("4. 대 륙  관 리");
 			System.out.println("4. 프로그램 종료");
-			
 			int select = sc.nextInt();
-			switch(select) {
+			switch (select) {
 			case 1:
-				//employeeController의 start 메서드 호출
+				// employeeController의 start 메서드 호출
+				employeeController.start();
 				break;
 			case 2:
-				departmentController.start(); 
+				departMentController.start();
 				break;
 			case 3:
-				//LocationController의 start 메서드 호출
+				// locationController의 start 메서드 호출
+				locationController.start();
 				break;
-				
-				default:
-					flag = false;
+			case 4:
+				regionController.start();
+				break;
 			
-			
-			}//switch
-			
-			
+			default:
+				flag = false;
+				break;
+			}
 			
 		}
+		
 	}
-}
+	
 
+}
